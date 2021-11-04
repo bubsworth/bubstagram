@@ -3,5 +3,12 @@
 <%= link_to "create post", new_post_path, class: "btn btn-primary" %>
 
 <% @posts.each do |post| %>
-  <%= post.caption%>
+  <div>
+    <%= post.caption%>
+    <div>
+      <%= link_to "Show", post_path(post) %>
+      <%= link_to "Edit", edit_post_path(post) %>
+      <%= link_to "Delete", post_path(post), data: {confirm: "Are you sure you want to delete this?"}, method: :delete %>          
+    </div>
+  </div>
 <% end %>
