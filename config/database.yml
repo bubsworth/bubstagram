@@ -14,16 +14,18 @@
 # Configure Using Gemfile
 # gem 'pg'
 #
-default: &default
+rails_config: &rails_db
   adapter: postgresql
-  encoding: unicode
-  # For details on connection pooling, see Rails configuration guide
-  # https://guides.rubyonrails.org/configuring.html#database-pooling
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  encoding: utf8
+  collation: en_GB.UTF-8
+  pool: 45
+  host: <%= '127.0.0.1' %>                                    
 
 development:
-  <<: *default
+  <<: *rails_db
   database: insta_clone_development
+  password: password
+  username: bhubbard
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -55,9 +57,9 @@ development:
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
-test:
-  <<: *default
-  database: insta_clone_test
+# test:
+  # <<: *rails_db
+  # database: insta_clone_test
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -79,8 +81,8 @@ test:
 # Read https://guides.rubyonrails.org/configuring.html#configuring-a-database
 # for a full overview on how database connection configuration can be specified.
 #
-production:
-  <<: *default
-  database: insta_clone_production
-  username: insta_clone
-  password: <%= ENV['insta_clone_DATABASE_PASSWORD'] %>
+# production:
+  # <<: *rails_db
+  # database: insta_clone_production
+  # username: insta_clone
+  # password: password
