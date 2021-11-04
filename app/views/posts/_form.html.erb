@@ -1,0 +1,23 @@
+<% if post.errors.any? %>
+<h2><%= pluralize(post.errors.count, "error") %> prevented this post from being posted:</h2>
+<ul>
+  <% post.errors.full_messages.each do |msg| %>
+  <li><%= msg %></li>
+  <% end %>
+</ul>
+<% end %>
+
+<%= form_with model: @post do |form| %>
+  <div>
+    <%= form.label :image%>
+    <%= form.file_field :image %>
+  </div>
+
+  <div>
+    <%= form.label :caption %>
+    <%= form.text_field :caption %>
+  </div>
+
+  <%= form.button "Create post" %>
+
+<% end %>

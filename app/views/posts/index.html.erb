@@ -1,1 +1,7 @@
-posts index
+<h1>posts index</h1>
+
+<%= link_to "create post", new_post_path, class: "btn btn-primary" %>
+
+<% @posts.each do |post| %>
+  <%= post.caption%>
+<% end %>
