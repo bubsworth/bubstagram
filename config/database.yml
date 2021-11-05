@@ -23,7 +23,7 @@ rails_config: &rails_db
 
 development:
   <<: *rails_db
-  database: insta_clone_development
+  database: bubstagram_development
   password: password
   username: bhubbard
 
@@ -31,7 +31,7 @@ development:
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
   # the same name as the operating system user running Rails.
-  #username: insta_clone
+  #username: bubstagram
 
   # The password associated with the postgres role (username).
   #password:
@@ -59,7 +59,7 @@ development:
 # Do not set this db to the same as development or production.
 # test:
   # <<: *rails_db
-  # database: insta_clone_test
+  # database: bubstagram_test
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -83,6 +83,6 @@ development:
 #
 # production:
   # <<: *rails_db
-  # database: insta_clone_production
-  # username: insta_clone
+  # database: bubstagram_production
+  # username: bubstagram
   # password: password
