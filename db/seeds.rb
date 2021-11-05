@@ -14,6 +14,7 @@ user_1 = User.create!(
   username: "steve_man",
   email: "steve@example.com",
   password: "secret123",
+  password_confirmation: "secret123"
 )
 
 puts "\n== Creating posts =="
