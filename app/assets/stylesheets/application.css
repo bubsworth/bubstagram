@@ -27,16 +27,34 @@ body, HTML {
 	overflow: hidden;
   position: fixed; 
 	height: 4rem;
+	flex-direction: row;
+	display: inline-flex;
+	align-items: center;
 }
 
 .navigation {
   top: 0; 
+	justify-content: space-between;
+}
+
+.container {
+	margin: 5rem auto;
+	font-family: 'Heebo', sans-serif;
+}
+
+.page-title {
+	font-family: 'Pacifico', cursive;
+	padding-left: 0.8rem;
+	padding-bottom: 0.3rem;
 }
 
 footer {
   bottom: 0; 
+	justify-content: center;
 }
 
-.container {
-	margin: 4.5rem auto;
+.icon {
+	margin-right: 1.1rem;
+	width: 2rem;
 }
+
