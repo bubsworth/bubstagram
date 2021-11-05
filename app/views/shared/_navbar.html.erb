@@ -2,7 +2,15 @@
 	<div class="logo">
   	<h1 class="page-title">bubstagram</h1>
 	</div>
-	<div class="navbar-icons">
-		<%= image_tag("icons8-paper-airplane-60.png", class: "icon") %>
-	</div>
+	<% if current_user.present? %>
+		<div class="navbar-icons">
+			<%= image_tag("icons8-paper-airplane-60.png", class: "icon") %>
+			<%= link_to "logout", destroy_user_session_path, method: :delete  %>
+		</div>
+	<% else %>
+		<div class="container">
+			<%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
+			<%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+		</div>
+	<% end %>
 </div>
