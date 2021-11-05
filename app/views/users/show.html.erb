@@ -1,2 +1,18 @@
-<h1>user profile</h1>
+<div class="container profile-container">
+  <h2><%= current_user.username %></h2>
+	<div class="profile-banner">
+		<p>image/</p>
+		<p>posts/</p>
+		<p>followers/</p>
+		<p>following</p>
+	</div>
+	<div class="profile-info">
+		<h4><%= current_user.name %></h4>
+		<p><%= current_user.pronouns %></p>
+		<p><%= current_user.bio %></p>
+	</div>
 
+	<div class="profile-posts-container">
+	</div>
+
+</div>
