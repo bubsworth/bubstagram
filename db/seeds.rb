@@ -28,6 +28,16 @@ post_2 = Post.create!(
   user_id: user_1
 )
 
+post_3 = Post.create!(
+  caption: "My cat is the best",
+  user_id: user_1
+)
+
+post_4 = Post.create!(
+  caption: "Best way to start the day",
+  user_id: user_1
+)
+
 puts "\n== Handling active images =="
 
 def path_for_image(filename)
@@ -39,4 +49,7 @@ post_1.image.attach(io: File.open(path_for_image("beach.png")), filename: "beach
 post_1.save!
 post_2.image.attach(io: File.open(path_for_image("coffee.png")), filename: "coffee.png")
 post_2.save!
-
+post_3.image.attach(io: File.open(path_for_image("cat.png")), filename: "cat.png")
+post_3.save!
+post_4.image.attach(io: File.open(path_for_image("avocado.png")), filename: "avocado.png")
+post_4.save!
