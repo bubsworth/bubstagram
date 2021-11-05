@@ -1,0 +1,25 @@
+// Place all the styles related to the posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.profile-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.profile-banner {
+	display: inline-flex;
+	flex-direction: row;
+}
+
+.profile-info {
+
+}
+
+.profile-posts-container{
+	border: 1px solid grey;
+	height: 200px;
+	width: 200px;
+}

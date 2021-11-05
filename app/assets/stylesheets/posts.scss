@@ -17,14 +17,15 @@
   display: grid;
 }
 
-.post-image {
+.post-image, .post-show-image  {
   max-width: 300px; 
   max-height: 300px;
 }
 
-.post-show-image {
-  max-width: 500px; 
-  max-height: 500px;
+.post-show-image  {
+  max-width: 300px; 
+  max-height: 300px;
+  padding: 0.9rem 0;
 }
 
 .post-user-info {

@@ -37,9 +37,16 @@ body, HTML {
 	justify-content: space-between;
 }
 
-.container {
+.container {	
 	margin: 5rem auto;
 	font-family: 'Heebo', sans-serif;
+}
+
+.centered-form {	
+  justify-content: center;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
 }
 
 .page-title {
@@ -57,4 +64,3 @@ footer {
 	margin-right: 1.1rem;
 	width: 2rem;
 }
-
