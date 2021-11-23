@@ -1,18 +1,49 @@
-<div class="container profile-container">
-  <h2><%= current_user.username %></h2>
-	<div class="profile-banner">
-		<p>image/</p>
-		<p>posts/</p>
-		<p>followers/</p>
-		<p>following</p>
-	</div>
-	<div class="profile-info">
-		<h4><%= current_user.name %></h4>
-		<p><%= current_user.pronouns %></p>
-		<p><%= current_user.bio %></p>
+<div class="container centered-container">
+
+	<% if current_user_can_only(@user) %>
+    <%= render partial: "user-nav" %>
+	  <h2 style="margin-top:0.8rem;"><%= @user.username %></h2>
+	<% else %>
+	  <h2><%= @user.username %></h2>
+	<% end %>
+
+  <div class="profile-top-banner">
+		<div class="profile-image">
+			<%= image_tag(@user.image, class: "profile-image") %>
+		</div>
+		<div class="profile-posts-followers-container">
+			<div class="profile-post-follower">
+				<p><%= @user.posts.count %></p> 
+				<p>posts</p>
+			</div>
+			<div class="profile-post-follower">
+				<p>tbc</p> 
+				<p>followers</p> 
+			</div>
+			<div class="profile-post-follower">
+				<p>tbc</p> 
+				<p>following</p>
+			</div>
+		</div>
 	</div>
 
-	<div class="profile-posts-container">
+	<div class="profile-info">
+		<h4><%= @user.name %> (<%= @user.pronouns %>)</h4>
+		<p><%= @user.bio %></p>
+	</div>
+
+	<% if current_user_can_only(@user) %>
+		<div class="update-profile-container">
+			<span class="update-profile-button"><%= link_to "Edit profile", edit_user_path(@user) %></span>
+		</div>
+	<% end %>
+
+	<div class="gallery">
+	<% @user.posts.each do |post| %>
+		<div class="gallery-item" tabindex="0">
+			<%= link_to image_tag(post.image, class: "gallery-image"), post_path(post) %>
+		</div>
+	<% end %>
 	</div>
 
 </div>

@@ -1,26 +1,28 @@
-  <div class="container centered-form">
-    <h2>Create a post</h2>
+<div class="container centered-form">
+  <h1>Create a post</h1>
 
-    <% if @post.errors.any? %>
-    <h2><%= pluralize(@post.errors.count, "error") %> prevented this post from being @ed:</h2>
-    <ul>
-      <% @post.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-      <% end %>
-    </ul>
+  <% if @post.errors.any? %>
+  <h2><%= pluralize(@post.errors.count, "error") %> prevented this post from being saved:</h2>
+  <ul>
+    <% @post.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
     <% end %>
+  </ul>
+  <% end %>
 
-    <%= form_with model: @post do |form| %>
-      <div>
-        <%= form.label :image%>
-        <%= form.file_field :image %>
-      </div>
+  <%= form_with model: @post do |form| %>
+    <div class="field">
+      <%= form.label :image%>
+      <%= form.file_field :image, class: "field-input" %>
+    </div>
 
-      <div>
-        <%= form.label :caption %>
-        <%= form.text_field :caption %>
-      </div>
+    <div class="field">
+      <%= form.label :caption %>
+      <%= form.text_field :caption, class: "field-input" %>
+    </div>
 
-      <%= form.button %>
-    <% end %>
-  </div>
+    <div class="actions">
+      <%= form.submit class: "action-buttons" %>
+    </div>
+  <% end %>
+</div>

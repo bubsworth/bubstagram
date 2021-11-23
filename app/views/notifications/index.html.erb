@@ -1,0 +1,8 @@
+<div class="container centered-container">
+  <h2>Your notifications</h2>
+  <% current_user.notifications.each do |nf| %>
+    <div class="notification-content-container">
+      <%= render nf %>
+    </div>
+  <% end %>
+</div>

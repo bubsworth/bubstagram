@@ -1,24 +1,3 @@
 <div class="container">
-  <% @posts.each do |post| %>
-    <div class="post-container">		
-      <div class="post-user-info">
-        <%# <%= link_to image_tag(user.image, class: "user-image"), user_path(@user) %> 
-			  <span><%= current_user.username %></span>
-        <div class="post-buttons-container">
-          <%= link_to "Edit", edit_post_path(post) %>
-          <%= link_to "Delete", post_path(post), data: {confirm: "Are you sure you want to delete this?"}, method: :delete %>          
-        </div>
-      </div>
-      <div class="post-image-caption-container">
-        <%= link_to image_tag(post.image, class: "post-image"), post_path(post) %>
-        <div class="post-icons">
-          <%= image_tag("icons8-heart-96.png", class: "icon") %>
-          <%= image_tag("icons8-speech-bubble.svg", class: "icon") %>
-          <%= image_tag("icons8-paper-airplane-60.png", class: "icon") %>
-        </div>
-        <%= post.caption%>
-        <hr>
-      </div>
-    </div>
-  <% end %>
+  <%= render @posts %>
 </div>

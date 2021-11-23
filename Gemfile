@@ -67,3 +67,9 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem "sidekiq", "~> 6.2"
+
+gem "webpacker", "~> 5.4"
+
+gem "requestjs-rails", "~> 0.0.5"
+
+gem "noticed", "~> 1.5"

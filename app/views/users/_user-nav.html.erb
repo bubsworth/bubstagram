@@ -1,0 +1,30 @@
+<div class="user-buttons-container dropdown user-nav" onclick="myFunction()">
+    <image src="/assets/icons8-ellipsis-60.png" class="ellipses-icon dropbtn " />
+    <div id="myDropdown" class="dropdown-content">
+        <ul>
+            <li><image src="/assets/icons8-close-window-50.png" class="dropdown-cross-button" /></li>
+            <li><%= link_to "Edit account", edit_user_path(@user) %></li>
+            <li><%= link_to "Saved posts", user_collects_path(@user) %></li>
+            <li><%= link_to "Liked posts", edit_user_path(@user) %></li>
+        </ul>
+    </div>
+</div> 
+
+<script>
+  function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+  }
+
+  window.onclick = function(event) {
+    if (!event.target.matches('.dropbtn')) {
+      var dropdowns = document.getElementsByClassName("dropdown-content");
+      var i;
+      for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+          openDropdown.classList.remove('show');
+        }
+      }
+    }
+  } 
+</script>

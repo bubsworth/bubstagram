@@ -1,25 +1,130 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
-
-.profile-container {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
+.user-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  width: 300px;
 }
 
-.profile-banner {
-	display: inline-flex;
+.profile-top-banner{
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.profile-posts-followers-container{
+  align-items: center;
+	display: block ruby;
 	flex-direction: row;
+  justify-content: space-between;
+  text-align: center;
+  width:100%;
 }
 
-.profile-info {
-
+.profile-post-follower:not(:last-child) {
+  margin-right: 30px;
 }
 
-.profile-posts-container{
-	border: 1px solid grey;
-	height: 200px;
-	width: 200px;
+.profile-image {
+  align-items: center;
+  border-radius: 50%;
+  display: inline-block;
+  height: 85px;
+  justify-content: center;
+  margin-right: 1rem;;
+  margin-bottom: 0.75rem;;
+  position: relative;
+  width: 85px;
+}
+
+.profile-info{
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width:355px;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+  grid-gap: 1rem;
+  padding-bottom: 3rem;
+  margin: -0.5rem -0.5rem;
+  width: 90%;
+}
+
+.gallery-item {
+  color: #fff;
+  cursor: pointer;
+  flex: 1 0 22rem;
+  margin: 1rem;
+	position: relative;
+}
+
+.gallery-image {
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+@media (max-width: 500px) {
+  .profile-top-banner, .profile-info {
+    max-width: 300px;
+  }
+
+  .profile-post-follower:not(:last-child) {
+    margin-right: 15px;
+  }
+
+  .profile-info {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .profile-image{
+    height: 65px;
+    margin-right:0.5rem;
+    width: 65px;
+  }
+
+  .gallery, .gallery-item {
+    align-items: center;
+    display: flex;
+    flex: 0;
+    flex-direction:  column;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.profile-info  h4{
+  margin-bottom: 0;
+  text-align: left;
+}
+
+.update-profile-container {
+  align-items: center;
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-bottom: 0.8rem;
+  width: 300px;
+}
+
+.update-profile-container a{
+  color:#000;
+  text-decoration: none;
+}
+
+.update-profile-button {
+  border: #e0e0e0 2px solid;
+  border-radius: 4%;
+  font-size: 0.9rem;
+  padding: 0.3rem 0.8rem;
 }

@@ -1,0 +1,8 @@
+<% if notification.params[:like].present? %>
+    <%= render partial: "like", object: notification %>
+<%end%>
+
+<% if notification.params[:comment].present? %>
+    <%= render partial: "comment", object: notification %>
+<% end %>
+

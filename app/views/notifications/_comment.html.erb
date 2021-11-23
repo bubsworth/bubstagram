@@ -1,0 +1,3 @@
+<div><%= link_to image_tag(comment.params[:comment].user.image, class:"notification-profile-image"), user_path(comment.params[:comment].user) %></div>
+<div class="notification-info"><%= comment.type %> by <%= comment.params[:comment].user.username %> on &nbsp;<span class="notification-time"><%= formatted_time(comment.created_at) %></span></div>
+<div><%= link_to image_tag(comment.params[:comment].post.image, class:"notification-post-image"), post_path(comment.params[:comment].post) %></div>

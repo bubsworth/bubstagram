@@ -1,0 +1,19 @@
+// Place all the styles related to the posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.comment-container{
+  font-size: 0.8rem;
+  margin-top:0.5rem;
+}
+
+.comment{
+  display:flex;
+  justify-content: space-between;
+}
+
+.comment-delete-icon {
+  width: 0.7rem;
+  justify-content: center;
+  align-self: center;
+}

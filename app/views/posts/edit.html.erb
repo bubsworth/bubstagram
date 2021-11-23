@@ -2,7 +2,7 @@
   <h2>Edit post</h2>
 
   <% if @post.errors.any? %>
-      <h2><%= pluralize(@post.errors.count, "error") %> prevented this post from being @ed:</h2>
+      <h2><%= pluralize(@post.errors.count, "error") %> prevented this post from being saved:</h2>
       <ul>
       <% @post.errors.full_messages.each do |msg| %>
       <li><%= msg %></li>
@@ -11,11 +11,12 @@
   <% end %>
 
   <%= form_with model: @post do |form| %>
-    <div>
+    <div class="field">      
       <%= form.label :caption %>
-      <%= form.text_field :caption %>
+      <%= form.text_field :caption, class: "field-input" %>
     </div>
-
-    <%= form.button %>
+    <div class="actions">
+      <%= form.submit class: "action-buttons" %>
+    </div>
   <% end %>
 </div>
